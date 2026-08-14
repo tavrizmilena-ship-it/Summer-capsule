@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Питание при колите кишечника — что можно и нельзя</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F1E6;
+    --surface:#FFFFFF;
+    --ink:#2E3B32;
+    --ink-soft:#5B6B60;
+    --ok:#3E7A54;
+    --ok-soft:#E4EDE3;
+    --ok-line:#BFD6C2;
+    --no:#A8452F;
+    --no-soft:#F4E3DC;
+    --no-line:#E4C1B3;
+    --warn:#B4841F;
+    --warn-soft:#F6ECD6;
+    --warn-line:#E9D3A0;
+    --brand:#1F4E44;
+    --brand-2:#274F45;
+    --line:#E4DCC9;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Atkinson Hyperlegible', system-ui, sans-serif;
+    font-size:19px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    color:var(--brand);
+    line-height:1.15;
+    margin:0 0 .4em 0;
+  }
+  a{color:var(--brand);}
+  img{max-width:100%;}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+
+  /* Sticky quick-nav */
+  nav.quickbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,241,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    padding:12px 0;
+  }
+  nav.quickbar .wrap{
+    display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
+  }
+  nav.quickbar a{
+    text-decoration:none;
+    font-weight:700;
+    font-size:16px;
+    color:var(--brand);
+    background:var(--surface);
+    border:1.5px solid var(--line);
+    padding:9px 18px;
+    border-radius:999px;
+    transition:all .15s ease;
+    white-space:nowrap;
+  }
+  nav.quickbar a:hover{background:var(--brand); color:#fff; border-color:var(--brand);}
+
+  /* Hero */
+  header.hero{
+    padding:56px 0 40px;
+    text-align:center;
+  }
+  header.hero .eyebrow{
+    display:inline-block;
+    font-family:'Atkinson Hyperlegible', sans-serif;
+    font-weight:700;
+    letter-spacing:.04em;
+    color:var(--ok);
+    background:var(--ok-soft);
+    border:1px solid var(--ok-line);
+    padding:6px 16px;
+    border-radius:999px;
+    font-size:15px;
+    margin-bottom:22px;
+  }
+  header.hero h1{
+    font-size:clamp(32px,5vw,50px);
+    font-weight:600;
+    max-width:14ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  header.hero p.lead{
+    font-size:20px;
+    color:var(--ink-soft);
+    max-width:56ch;
+    margin:18px auto 0;
+  }
+
+  /* Signature quick-check wheel */
+  .quickcheck{
+    margin:44px auto 0;
+    max-width:760px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px 24px;
+    box-shadow:0 1px 0 rgba(0,0,0,0.02);
+  }
+  .quickcheck h3{
+    text-align:center;
+    font-size:18px;
+    color:var(--ink-soft);
+    font-family:'Atkinson Hyperlegible',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    margin-bottom:18px;
+  }
+  .quickcheck .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  @media(max-width:560px){ .quickcheck .grid{grid-template-columns:1fr;} }
+  .qc-card{
+    border-radius:14px;
+    padding:18px 18px;
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .qc-card.ok{background:var(--ok-soft); border:1px solid var(--ok-line);}
+  .qc-card.no{background:var(--no-soft); border:1px solid var(--no-line);}
+  .badge{
+    flex:none;
+    width:34px; height:34px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff;
+    font-weight:700;
+  }
+  .badge.ok{background:var(--ok);}
+  .badge.no{background:var(--no);}
+  .qc-card .txt strong{display:block; font-size:16px; margin-bottom:2px;}
+  .qc-card .txt span{font-size:15.5px; color:var(--ink-soft);}
+
+  /* Sections */
+  section{padding:56px 0;}
+  section.alt{background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  section h2{font-size:clamp(26px,3.4vw,34px); font-weight:600;}
+  .section-intro{color:var(--ink-soft); max-width:60ch; font-size:18px; margin-bottom:32px;}
+
+  /* About */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:28px;
+    align-items:start;
+  }
+  @media(max-width:720px){ .about-grid{grid-template-columns:1fr;} }
+  .about-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px;
+  }
+  .about-card h3{font-size:19px; margin-bottom:10px;}
+  .rules-list{list-style:none; margin:0; padding:0;}
+  .rules-list li{
+    display:flex; gap:12px; align-items:flex-start;
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .rules-list li:last-child{border-bottom:none;}
+  .rules-list .num{
+    flex:none; width:28px; height:28px; border-radius:50%;
+    background:var(--brand); color:#fff; font-size:14px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  /* Food grid */
+  .food-cols{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media(max-width:720px){ .food-cols{grid-template-columns:1fr;} }
+  .food-col{
+    border-radius:var(--radius);
+    padding:26px 24px;
+    border:1px solid;
+  }
+  .food-col.ok{background:var(--ok-soft); border-color:var(--ok-line);}
+  .food-col.no{background:var(--no-soft); border-color:var(--no-line);}
+  .food-col .head{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+  .food-col .head .badge{width:40px; height:40px; font-size:18px;}
+  .food-col .head h3{margin:0; font-size:22px;}
+  .food-col .head h3.ok{color:var(--ok);}
+  .food-col .head h3.no{color:var(--no);}
+  .food-cat{display:flex; gap:14px; align-items:flex-start; margin-bottom:16px;}
+  .food-cat:last-child{margin-bottom:0;}
+  .food-cat .body{flex:1;}
+  .food-cat .label{
+    font-weight:700; font-size:15.5px;
+    text-transform:uppercase; letter-spacing:.03em;
+    color:var(--ink-soft); margin-bottom:6px;
+  }
+  .food-cat p{margin:0; font-size:17.5px;}
+
+  /* Menu table */
+  .meal-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    margin-bottom:18px;
+  }
+  .meal-card .time{
+    display:inline-block;
+    font-weight:700;
+    color:#fff;
+    background:var(--brand);
+    padding:4px 14px;
+    border-radius:999px;
+    font-size:14.5px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .meal-card h3{font-size:20px; margin:0 0 12px 0;}
+  .dish{
+    display:flex; gap:14px; align-items:flex-start;
+    padding:12px 0;
+    border-top:1px solid var(--line);
+  }
+  .dish:first-child{border-top:none; padding-top:0;}
+  .dish .body{flex:1;}
+  .dish .dname{font-weight:700; font-size:17.5px; margin-bottom:4px;}
+  .dish .ding{color:var(--ink-soft); font-size:16px; margin-bottom:4px;}
+  .dish .dmethod{font-size:16.5px;}
+  .dish .dmethod::before{content:"→ "; color:var(--ok); font-weight:700;}
+
+  /* Footer note */
+  .note{
+    max-width:760px; margin:0 auto;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-left:5px solid var(--brand);
+    border-radius:12px;
+    padding:22px 24px;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+  .note strong{color:var(--ink);}
+
+  /* Icons */
+  .icon-badge{
+    flex:none; width:40px; height:40px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .icon-badge svg{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
+  .icon-badge.ok{background:var(--ok-soft); color:var(--ok);}
+  .icon-badge.no{background:var(--no-soft); color:var(--no);}
+  .icon-badge.warn{background:var(--warn-soft); color:var(--warn);}
+  .icon-badge.no.slash::after{
+    content:""; position:absolute; inset:0; margin:auto;
+    width:150%; height:2px; background:var(--no); transform:rotate(-45deg);
+  }
+  .icon-badge.lg{width:48px; height:48px; border-radius:14px;}
+  .icon-badge.lg svg{width:26px; height:26px;}
+
+  /* Lifehacks */
+  .hacks-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:28px;}
+  @media(max-width:720px){ .hacks-grid{grid-template-columns:1fr;} }
+  .hack-card{
+    display:flex; gap:14px; align-items:flex-start;
+    background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:18px;
+  }
+  .hack-card h3{font-size:17px; margin:0 0 4px 0; font-family:'Fraunces',serif; color:var(--ink);}
+  .hack-card p{margin:0; font-size:16px; color:var(--ink-soft);}
+
+  .coffee-card{
+    background:var(--warn-soft); border:1px solid var(--warn-line);
+    border-radius:var(--radius); padding:26px;
+  }
+  .coffee-head{display:flex; gap:16px; align-items:center; margin-bottom:16px;}
+  .coffee-head h3{margin:0 0 4px 0; font-size:20px; color:var(--warn);}
+  .coffee-card .rules-list li{border-bottom-color:var(--warn-line);}
+  .coffee-card .rules-list .num{background:var(--warn);}
+
+  footer{
+    text-align:center;
+    padding:40px 24px 60px;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+
+  @media print{
+    nav.quickbar{position:static;}
+    section{padding:24px 0;}
+  }
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="ic-bowl" viewBox="0 0 24 24"><path d="M3 11h18a9 8 0 0 1-18 0Z"/><path d="M9 5c0 1-1 1-1 2s1 1 1 2M14 5c0 1-1 1-1 2s1 1 1 2"/></symbol>
+  <symbol id="ic-glass" viewBox="0 0 24 24"><path d="M6.5 3h11l-1.3 15.5A2 2 0 0 1 14.2 20H9.8a2 2 0 0 1-2-1.5L6.5 3Z"/><path d="M7.3 9h9.4"/></symbol>
+  <symbol id="ic-cutlet" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="8.5" ry="5"/><path d="M6 12h12M8.5 9.3h7M8.5 14.7h7"/></symbol>
+  <symbol id="ic-fish" viewBox="0 0 24 24"><path d="M2.5 12c4-5 11-6.5 15-3.3-1 2-1 4.6 0 6.6-4 3.2-11 1.7-15-3.3Z"/><circle cx="15" cy="10.2" r=".7" fill="currentColor" stroke="none"/><path d="M17.5 9.2c1.3-1.4 3.5-1.8 4.5-.6-1 2-1 3 0 5-1 1.2-3.2.8-4.5-.6"/></symbol>
+  <symbol id="ic-cup" viewBox="0 0 24 24"><path d="M4 9h13v4.5A5.5 5.5 0 0 1 11.5 19h-2A5.5 5.5 0 0 1 4 13.5V9Z"/><path d="M17 10.2h1.5a2.3 2.3 0 0 1 0 4.6H17"/><path d="M8 5c0 1-1 1-1 2m5-2c0 1-1 1-1 2"/></symbol>
+  <symbol id="ic-cheese" viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="12" rx="3"/><circle cx="9.3" cy="10.3" r=".8" fill="currentColor" stroke="none"/><circle cx="14.3" cy="10.8" r=".8" fill="currentColor" stroke="none"/><circle cx="11.7" cy="14.3" r=".8" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-casserole" viewBox="0 0 24 24"><path d="M3 13.5h18V15a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 15v-1.5Z"/><path d="M3 13.5a9 3.2 0 0 1 18 0"/><path d="M2 9.5h20"/></symbol>
+  <symbol id="ic-egg" viewBox="0 0 24 24"><path d="M12 3C8 8.2 5.8 12.2 5.8 15.3a6.2 6.2 0 0 0 12.4 0C18.2 12.2 16 8.2 12 3Z"/></symbol>
+  <symbol id="ic-veg" viewBox="0 0 24 24"><path d="M6.2 13c-1.2-3 .8-6.3 4-6 .8-2 3.8-2.8 5.6-1 2.6 1 3.5 4 2.4 6 1 2.2-.2 5-2.8 5H9.2c-2 0-2.6-2-3-4Z"/><path d="M13 6.8c.6-1 1.8-1.4 2.8-.8"/></symbol>
+  <symbol id="ic-bread" viewBox="0 0 24 24"><path d="M4 12.5a8 6 0 0 1 16 0V18H4v-5.5Z"/><path d="M9 12.5V18M14.2 12.5V18"/></symbol>
+  <symbol id="ic-butter" viewBox="0 0 24 24"><rect x="5.5" y="10" width="13" height="7" rx="2"/><path d="M5.5 10c0-2.2 13-2.2 13 0"/></symbol>
+  <symbol id="ic-berry" viewBox="0 0 24 24"><circle cx="9" cy="14.5" r="3"/><circle cx="14.5" cy="12.2" r="3"/><circle cx="14.5" cy="17.2" r="2.4"/><path d="M13.3 8c1-1.2 3-1.3 3.2.6"/></symbol>
+  <symbol id="ic-pan" viewBox="0 0 24 24"><path d="M3.5 12.5h13.5a1 1 0 0 0 1-1v-1a5.5 5.5 0 0 0-5.5-5.5h-3a5.5 5.5 0 0 0-5.5 5.5v1a1 1 0 0 0 1 1Z"/><path d="M18 8.5h3.2"/></symbol>
+  <symbol id="ic-cabbage" viewBox="0 0 24 24"><circle cx="12" cy="13" r="7"/><path d="M12 13c-2.4-2-2.4-6 0-8m0 8c2.4-2 2.4-6 0-8m0 8c-1.4-1.2-1.4-3.6 0-5m0 5c1.4-1.2 1.4-3.6 0-5"/></symbol>
+  <symbol id="ic-chili" viewBox="0 0 24 24"><path d="M8 6c1.5-1.6 3.6-2 4.6-1 1 1 .3 2.6-1 3.8-3 2.8-5.4 6.7-4 9.7 2 1.6 5.6.4 7.6-2.6 2-3 2-6.6-1.4-9.4"/><path d="M8 6c-.6-1-1.8-1.4-2.6-.8"/></symbol>
+  <symbol id="ic-can" viewBox="0 0 24 24"><rect x="7" y="4" width="10" height="16" rx="3"/><path d="M9.5 9c.6-.8 1-1.6.6-2.4M13.5 10c.6-.8 1-1.6.6-2.4"/></symbol>
+  <symbol id="ic-coffee" viewBox="0 0 24 24"><path d="M5 9h13.5l-.9 8.2a2.5 2.5 0 0 1-2.5 2.3H8.4a2.5 2.5 0 0 1-2.5-2.3L5 9Z"/><path d="M8.5 5c0 1-1.2 1-1.2 2s1.2 1 1.2 2M13.5 5c0 1-1.2 1-1.2 2s1.2 1 1.2 2"/></symbol>
+</svg>
+
+<nav class="quickbar">
+  <div class="wrap">
+    <a href="#about">О расстройстве</a>
+    <a href="#can">Что можно</a>
+    <a href="#cannot">Что нельзя</a>
+    <a href="#hacks">Лайфхаки</a>
+    <a href="#menu">Меню на день</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Памятка по питанию</span>
+    <h1>Что можно есть при колите кишечника</h1>
+    <p class="lead">Простая шпаргалка на каждый день: что подходит, чего лучше избегать, и готовое меню на сутки — чтобы не нужно было держать всё в голове.</p>
+
+    <div class="quickcheck">
+      <h3>Если сомневаетесь — смотрите сюда</h3>
+      <div class="grid">
+        <div class="qc-card ok">
+          <div class="badge ok">✓</div>
+          <div class="txt">
+            <strong>Отварное, паровое, протёртое</strong>
+            <span>тёплое, не острое, небольшими порциями</span>
+          </div>
+        </div>
+        <div class="qc-card no">
+          <div class="badge no">✕</div>
+          <div class="txt">
+            <strong>Жареное, острое, сырое</strong>
+            <span>грубая клетчатка, специи, холодное и горячее</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>Что такое колит и почему важна еда</h2>
+    <p class="section-intro">Колит — это воспаление слизистой оболочки кишечника. Из-за воспаления кишечнику трудно переваривать грубую, жирную и раздражающую пищу, поэтому питание становится частью лечения, а не просто «диетой».</p>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Пять главных правил</h3>
+        <ul class="rules-list">
+          <li><span class="num">1</span><span>Есть часто и понемногу — 5–6 раз в день, не переедать.</span></li>
+          <li><span class="num">2</span><span>Еда только тёплая: не горячая и не холодная.</span></li>
+          <li><span class="num">3</span><span>Готовить на пару, отваривать или запекать — без жарки.</span></li>
+          <li><span class="num">4</span><span>При обострении — блюда протёртые, без грубых кусочков.</span></li>
+          <li><span class="num">5</span><span>Никаких специй, копчёностей, маринадов и алкоголя.</span></li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h3>Зачем это нужно</h3>
+        <p style="margin:0 0 12px 0; font-size:17.5px;">Такая еда меньше раздражает воспалённую слизистую, снижает нагрузку на кишечник и помогает ему восстановиться.</p>
+        <p style="margin:0; font-size:17.5px; color:var(--ink-soft);">Список ниже — общий ориентир. Точный набор разрешённых продуктов и длительность диеты стоит уточнить у врача, у неё может быть индивидуальный список.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="foods">
+  <div class="wrap">
+    <h2>Можно и нельзя — по категориям</h2>
+    <p class="section-intro">Если не помните, можно ли конкретное блюдо — сверьтесь с этими двумя списками.</p>
+
+    <div class="food-cols">
+      <div class="food-col ok" id="can">
+        <div class="head">
+          <div class="badge ok" style="width:40px;height:40px;font-size:18px;">✓</div>
+          <h3 class="ok">Можно</h3>
+        </div>
+
+        <div class="food-cat"><div class="icon-badge ok"><svg><use href="#ic-bowl"/></svg></div><div class="body"><div class="label">Крупы</div><p>Разваренные и протёртые манная, рисовая, овсяная каши на воде или с добавлением молока.</p></div></div>
+        <div class="food-cat"><div class="icon-badge ok"><svg><use href="#ic-bread"/></svg></div><div class="body"><div class="label">Хлеб</div><p>Подсушенный белый хлеб, несладкие сухари, несдобное печенье.</p></div></div>
+        <div class="food-cat"><div class="icon-badge ok"><svg><use href="#ic-cutlet"/></svg></div><div class="body"><div class="label">Мясо и рыба</div><p>Нежирные говядина, курица, индейка, нежирная рыба — отварные или паровые, лучше в виде котлет и фрикаделек.</p></div></div>
+        <div class="food-cat"><div class="icon-badge ok"><svg><use href="#ic-egg"/></svg></div><div class="body"><div class="label">Молочное и яйца</div><p>Свежий некислый творог, паровой омлет, яйца всмятку — в умеренном количестве.</p></div></div>
+        <div class="food-cat"><div class="icon-badge ok"><svg><use href="#ic-veg"/></svg></div><div class="body"><div class="label">Овощи</div><p>Картофель, морковь, кабачок — отварные, в виде пюре или запеканок.</p></div></div>
+        <div class="food-cat"><div class="icon-badge ok"><svg><use href="#ic-glass"/></svg></div><div class="body"><div class="label">Фрукты и напитки</div><p>Печёные яблоки, компоты и кисели из некислых фруктов и ягод, некрепкий чай, отвар шиповника.</p></div></div>
+        <div class="food-cat"><div class="icon-badge ok"><svg><use href="#ic-butter"/></svg></div><div class="body"><div class="label">Жиры</div><p>Небольшое количество сливочного масла, добавленное в готовое блюдо.</p></div></div>
+      </div>
+
+      <div class="food-col no" id="cannot">
+        <div class="head">
+          <div class="badge no" style="width:40px;height:40px;font-size:18px;">✕</div>
+          <h3 class="no">Нельзя</h3>
+        </div>
+
+        <div class="food-cat"><div class="icon-badge no slash"><svg><use href="#ic-bread"/></svg></div><div class="body"><div class="label">Хлеб и выпечка</div><p>Свежий хлеб, ржаной хлеб, сдоба, торты, пирожные.</p></div></div>
+        <div class="food-cat"><div class="icon-badge no slash"><svg><use href="#ic-pan"/></svg></div><div class="body"><div class="label">Мясо и рыба</div><p>Жирные свинина, баранина, утка, копчёности, колбасы, консервы, наваристые жирные бульоны.</p></div></div>
+        <div class="food-cat"><div class="icon-badge no slash"><svg><use href="#ic-glass"/></svg></div><div class="body"><div class="label">Молочное</div><p>Цельное молоко, сливки, острые и жирные сыры.</p></div></div>
+        <div class="food-cat"><div class="icon-badge no slash"><svg><use href="#ic-cabbage"/></svg></div><div class="body"><div class="label">Овощи и крупы</div><p>Капуста, редис, репа, грибы, бобовые, пшено, перловая и ячневая крупа — в сыром или грубом виде.</p></div></div>
+        <div class="food-cat"><div class="icon-badge no slash"><svg><use href="#ic-berry"/></svg></div><div class="body"><div class="label">Фрукты и ягоды</div><p>Кислые фрукты, виноград, сливы — дают послабляющий эффект.</p></div></div>
+        <div class="food-cat"><div class="icon-badge no slash"><svg><use href="#ic-chili"/></svg></div><div class="body"><div class="label">Готовка и приправы</div><p>Жареное, острое, копчёное, маринады, соленья, специи, уксус.</p></div></div>
+        <div class="food-cat"><div class="icon-badge no slash"><svg><use href="#ic-can"/></svg></div><div class="body"><div class="label">Напитки и сладкое</div><p>Газировка, какао, квас, алкоголь, шоколад, мороженое. Кофе — отдельная история, смотрите лайфхаки ниже.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="hacks">
+  <div class="wrap">
+    <h2>Лайфхаки: как проще соблюдать диету</h2>
+    <p class="section-intro">Несколько привычек, которые снимают часть решений и делают диету не такой утомительной.</p>
+
+    <div class="hacks-grid">
+      <div class="hack-card">
+        <div class="icon-badge ok"><svg><use href="#ic-casserole"/></svg></div>
+        <div class="body"><h3>Готовьте про запас</h3><p>Крупу, суп или запеканку — сразу на 2 дня. Вечером остаётся только разогреть.</p></div>
+      </div>
+      <div class="hack-card">
+        <div class="icon-badge ok"><svg><use href="#ic-bread"/></svg></div>
+        <div class="body"><h3>«Безопасный» перекус под рукой</h3><p>Сухарики или несдобное печенье в сумке спасают, если проголодалась вне дома.</p></div>
+      </div>
+      <div class="hack-card">
+        <div class="icon-badge ok"><svg><use href="#ic-bowl"/></svg></div>
+        <div class="body"><h3>Ешьте по расписанию</h3><p>5–6 небольших порций в одно время — меньше соблазна перекусить чем-то не тем от голода.</p></div>
+      </div>
+      <div class="hack-card">
+        <div class="icon-badge ok"><svg><use href="#ic-veg"/></svg></div>
+        <div class="body"><h3>Список — на видном месте</h3><p>Эта страница под рукой на телефоне — не нужно вспоминать правила заново каждый раз.</p></div>
+      </div>
+    </div>
+
+    <div class="coffee-card">
+      <div class="coffee-head">
+        <div class="icon-badge warn lg"><svg><use href="#ic-coffee"/></svg></div>
+        <div>
+          <h3>Если совсем не можете без кофе</h3>
+          <p style="margin:0;color:var(--ink-soft);">Полностью отказываться не обязательно — важно просто снизить нагрузку на кишечник.</p>
+        </div>
+      </div>
+      <ul class="rules-list">
+        <li><span class="num">1</span><span>Пить только после еды, никогда натощак — так кофе меньше раздражает слизистую.</span></li>
+        <li><span class="num">2</span><span>Одна некрепкая чашка в первой половине дня — лучше, чем несколько крепких за день.</span></li>
+        <li><span class="num">3</span><span>Разбавлять молоком: оно немного смягчает действие кофе на кишечник.</span></li>
+        <li><span class="num">4</span><span>Пить тёплым, не горячим и не залпом.</span></li>
+        <li><span class="num">5</span><span>В дни, когда самочувствие хуже, заменить на цикорий или некрепкий чай, пока не станет легче.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>Пример меню на день</h2>
+    <p class="section-intro">Готовый набор блюд на сутки — с ингредиентами и способом приготовления, чтобы не думать, что готовить.</p>
+
+    <div class="meal-card">
+      <span class="time">Завтрак</span>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-bowl"/></svg></div><div class="body">
+        <div class="dname">Разваренная овсяная каша</div>
+        <div class="ding">Овсяные хлопья — 50 г, молоко — 100 мл, сливочное масло — 5 г</div>
+        <div class="dmethod">Хлопья варить до полной готовности, добавить масло.</div>
+      </div>      </div>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-glass"/></svg></div><div class="body">
+        <div class="dname">Компот из яблок</div>
+        <div class="ding">Яблоки — 2 шт., вода — 500 мл</div>
+        <div class="dmethod">Яблоки нарезать, отварить в воде, добавить сахарозаменитель.</div>
+      </div>      </div>
+    </div>
+
+    <div class="meal-card">
+      <span class="time">Второй завтрак</span>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-cutlet"/></svg></div><div class="body">
+        <div class="dname">Паровая котлета из говядины</div>
+        <div class="ding">Говядина — 100 г, яйцо — 1 шт., хлеб — 20 г, молоко — 50 мл</div>
+        <div class="dmethod">Сделать фарш из говядины, яйца и хлеба, вымоченного в молоке, приготовить на пару.</div>
+      </div>      </div>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-berry"/></svg></div><div class="body">
+        <div class="dname">Кисель из черники</div>
+        <div class="ding">Черника — 50 г, вода — 500 мл, крахмал — 1 ст. л.</div>
+        <div class="dmethod">Чернику отварить, добавить крахмал и сахарозаменитель.</div>
+      </div>      </div>
+    </div>
+
+    <div class="meal-card">
+      <span class="time">Обед</span>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-bowl"/></svg></div><div class="body">
+        <div class="dname">Рисовый суп с фрикадельками</div>
+        <div class="ding">Рис — 30 г, куриный фарш — 100 г, картофель — 1 шт., морковь — 1 шт., вода — 500 мл</div>
+        <div class="dmethod">Отварить рис, добавить фрикадельки из куриного фарша.</div>
+      </div>      </div>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-fish"/></svg></div><div class="body">
+        <div class="dname">Отварная морская рыба</div>
+        <div class="ding">Филе морского окуня — 100 г</div>
+        <div class="dmethod">Рыбу отварить в воде или приготовить на пару.</div>
+      </div>      </div>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-cup"/></svg></div><div class="body">
+        <div class="dname">Травяной чай</div>
+        <div class="ding">Травяной сбор — 1 пакетик, вода — 200 мл</div>
+        <div class="dmethod">Заварить чай, дать настояться 5 минут.</div>
+      </div>      </div>
+    </div>
+
+    <div class="meal-card">
+      <span class="time">Полдник</span>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-cheese"/></svg></div><div class="body">
+        <div class="dname">Запеканка из нежирного творога</div>
+        <div class="ding">Творог — 100 г, яйцо — 1 шт., сахарозаменитель — по вкусу</div>
+        <div class="dmethod">Смешать творог, яйцо и сахарозаменитель, запечь в духовке.</div>
+      </div>      </div>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-glass"/></svg></div><div class="body">
+        <div class="dname">Компот из яблок</div>
+        <div class="ding">Яблоки — 2 шт., вода — 500 мл</div>
+        <div class="dmethod">Яблоки нарезать, отварить в воде, добавить сахарозаменитель.</div>
+      </div>      </div>
+    </div>
+
+    <div class="meal-card">
+      <span class="time">Ужин</span>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-casserole"/></svg></div><div class="body">
+        <div class="dname">Мясная запеканка</div>
+        <div class="ding">Говядина — 100 г, картофель — 100 г, молоко — 50 мл</div>
+        <div class="dmethod">Сделать фарш из говядины, добавить картофель, запечь в духовке с молоком.</div>
+      </div>      </div>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-cup"/></svg></div><div class="body">
+        <div class="dname">Некрепкий чай</div>
+        <div class="ding">Чай — 1 пакетик, вода — 200 мл</div>
+        <div class="dmethod">Заварить чай, дать настояться 5 минут.</div>
+      </div>      </div>
+    </div>
+
+    <div class="meal-card">
+      <span class="time">Перед сном</span>
+      <div class="dish"><div class="icon-badge ok"><svg><use href="#ic-glass"/></svg></div><div class="body">
+        <div class="dname">Компот или кисель</div>
+        <div class="ding">Яблоки — 2 шт., вода — 500 мл — или черника — 50 г, вода — 500 мл, крахмал — 1 ст. л.</div>
+        <div class="dmethod">Яблоки отварить как компот, либо чернику отварить и загустить крахмалом — как в рецепте киселя выше.</div>
+      </div>      </div>
+    </div>
+
+    <div class="note">
+      <strong>Важно:</strong> это меню — общий пример, а не назначение врача. Если есть точный список от гастроэнтеролога, стоит ориентироваться на него в первую очередь, особенно во время обострения.
+    </div>
+  </div>
+</section>
+
+<footer>
+  Памятка составлена как ориентир для повседневного питания. При появлении новых симптомов или сомнений — обратиться к врачу.
+</footer>
+
+</body>
+</html>
